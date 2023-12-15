@@ -1,0 +1,7 @@
+<div class="container">
+    <img src="/assets/images/mole.png" class="logo">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" id="userForm">
+        <input type="text" placeholder="Player name" formControlName="name">
+        <input type="submit" value="Play" [disabled]="!userForm.valid">
+    </form>
+</div>
