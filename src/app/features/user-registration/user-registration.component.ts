@@ -18,7 +18,6 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    console.log(this.userForm.value);
     this.Emitter.emit({action: 'user-registered', value: this.userForm.value});
   }
 }
