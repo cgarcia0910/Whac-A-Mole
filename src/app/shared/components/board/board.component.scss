@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 33% 33% 33%;
+    img {
+        width: 50%;
+        aspect-ratio: 1/1;
+        margin: 25%;
+    }
+    .board_item {
+        aspect-ratio: 1/1;
+    }
+}
