@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="header">
+        <span>{{playerName}}</span>
+        <span>{{board?.score | async}} points</span>
+        <select>
+            <option>Easy</option>
+        </select>
+    </div>
+    <div class="container__board">
+        <shared-board [boardItems]="boardItems" (Emitter)="boardActions($event)"></shared-board>
+    </div>
+    <button (click)="boardActions({action: 'start-game', value: undefined})">Start</button>
+</div>

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BoardComponent } from './features/board/board.component';
 import { UserRegistrationComponent } from './features/user-registration/user-registration.component';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { UserRegistrationComponent } from './features/user-registration/user-reg
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BoardComponent,
     UserRegistrationComponent,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
