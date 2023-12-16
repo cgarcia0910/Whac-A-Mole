@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BoardComponent } from './features/board/board.component';
+import { UserRegistrationComponent } from './features/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { BoardComponent } from './features/board/board.component';
     BrowserModule,
     AppRoutingModule,
     BoardComponent,
+    UserRegistrationComponent,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
