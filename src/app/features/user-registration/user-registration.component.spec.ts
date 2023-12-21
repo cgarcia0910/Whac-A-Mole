@@ -1,8 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 
 import { UserRegistrationComponent } from './user-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
+export const RouterStub = {
+  navigate(content:any) {}
+}
 describe('UserRegistrationComponent', () => {
   let component: UserRegistrationComponent;
   let fixture: ComponentFixture<UserRegistrationComponent>;
@@ -10,7 +14,10 @@ describe('UserRegistrationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [],
-      imports: [UserRegistrationComponent, FormsModule, ReactiveFormsModule]
+      imports: [UserRegistrationComponent, FormsModule, ReactiveFormsModule],
+      providers: [
+        {provides: Router, useValue: RouterStub}
+      ]
     }).compileComponents()
   });
   beforeEach(() => {
@@ -46,12 +53,14 @@ describe('UserRegistrationComponent', () => {
     inputControl.dispatchEvent(new Event('input'));
     expect(component.userForm.valid).toBe(true);
   })
-  it('should emmit usser information when form is valid and is submitted', () => {
+  it('should redirect to /game with user info when form is valid and is submitted', () => {
     const emitterSpy = spyOn(component.Emitter, 'emit');
+    const routerSpy = spyOn(component['router'], 'navigate');
     const userForm = fixture.debugElement.nativeElement.querySelector('#userForm');
     const {0: inputControl = undefined, 1:submitButton = undefined} = userForm.querySelectorAll('input') || [];
     inputControl.value = 'prueba';
     inputControl.dispatchEvent(new Event('input'));
     component.onSubmit();
-    expect(emitterSpy).toHaveBeenCalledWith({action: 'user-registered', value: {name: 'prueba'}})});
+    expect(routerSpy).toHaveBeenCalledWith([ 'game', Object({ name: 'prueba' }) ]);
+  });
 });

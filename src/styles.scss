@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+}
+.container {
+    background: url(./assets/images/background.png);
+    background-size: cover;
+    height: 100vh;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__applogo {
+        width: 40%;
+        margin:40% 30%;
+    }
+    &__registrationform {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 50px 80px;
+    }
+    &__board {
+        shared-board {
+            aspect-ratio: 1/1;
+            display: grid;
+            height: 100%;
+            grid-template-columns: 33% 33% 33%;
+        }
+        img {
+            width: 50%;
+            aspect-ratio: 1/1;
+            margin: 25%;
+        }
+        .board_item {
+            aspect-ratio: 1/1;
+        }
+    }
+    &__startstopbutton {
+        display: flex;
+        padding: 20px;
+        justify-content: space-around;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-family: sans-serif;
+        padding: 20px 40px;
+        color: green;
+        font-weight: bold;
+        select {
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: bold;
+            color: green;
+        }
+    }
+}

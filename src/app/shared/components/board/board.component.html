@@ -1,0 +1,4 @@
+<ng-container *ngFor="let item of boardItems">
+    <img class="board_item" *ngIf="item" [src]="item?.img" (click)="doAction({action: 'click-item', value: item?.points})">
+    <div class="board_item" *ngIf="!item" (click)="doAction({action: 'click-outside', value: undefined})"></div>
+</ng-container>
