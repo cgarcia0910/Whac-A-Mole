@@ -4,7 +4,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'shared-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss'],
   standalone: true,
   imports: [CommonModule]
 })

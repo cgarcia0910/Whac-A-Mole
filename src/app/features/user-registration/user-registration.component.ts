@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.scss'],
   standalone: true,
   imports: [
     ReactiveFormsModule
