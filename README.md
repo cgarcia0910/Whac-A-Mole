@@ -1,7 +1,7 @@
 # WhackAMole
 
 ## Url desplegada
-todo link to nexlifi
+https://whackamole-technical-assesment.netlify.app/
 ## Requisitos
 - node v.18.16.1
 ## Ejecución en local
